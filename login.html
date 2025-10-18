@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milar EMS - Вход в систему</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="logo-large">
+                    <h1>Milar EMS</h1>
+                    <p>Информационная система управления производством</p>
+                </div>
+            </div>
+
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="username">Логин</label>
+                    <div class="input-with-icon">
+                        <span class="material-icons">person</span>
+                        <input type="text" id="username" name="username" required placeholder="Введите ваш логин">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <div class="input-with-icon">
+                        <span class="material-icons">lock</span>
+                        <input type="password" id="password" name="password" required placeholder="Введите ваш пароль">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Роль</label>
+                    <select id="role" name="role" class="role-select">
+                        <option value="technologist">Технолог/Инженер</option>
+                        <option value="manager">Менеджер производства</option>
+                        <option value="quality">Специалист ОТК</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="login-button">
+                    <span class="material-icons">login</span>
+                    Войти в систему
+                </button>
+            </form>
+
+            <div class="login-footer">
+                <p>Для демонстрации используйте любые данные для входа</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/auth.js"></script>
+</body>
+</html>

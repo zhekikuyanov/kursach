@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milar EMS - Контроль операций</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1>Milar EMS</h1>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">
+                    <span class="material-icons">dashboard</span>
+                    Главная
+                </a>
+                <a href="orders.html" class="nav-link">
+                    <span class="material-icons">inventory_2</span>
+                    Заказы
+                </a>
+                <a href="operations.html" class="nav-link active">
+                    <span class="material-icons">precision_manufacturing</span>
+                    Операции
+                </a>
+                <a href="quality.html" class="nav-link">
+                    <span class="material-icons">verified</span>
+                    Качество
+                </a>
+            </nav>
+            <div class="user-menu">
+                <div class="user-avatar">
+                    <span class="material-icons">person</span>
+                </div>
+                <div class="user-info">
+                    <span class="user-name" id="currentUser">Технолог</span>
+                    <span class="user-role" id="currentRole">Технолог/Инженер</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="page-header">
+                <h1>Контроль технологических операций</h1>
+                <div class="production-line-selector">
+                    <label for="lineSelect">Производственная линия:</label>
+                    <select id="lineSelect">
+                        <option value="L-01">Линия L-01 (Пайка)</option>
+                        <option value="L-02">Линия L-02 (Монтаж)</option>
+                        <option value="L-03">Линия L-03 (Тестирование)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Current Operation -->
+            <div class="current-operation">
+                <div class="operation-header">
+                    <h3>Текущая операция: <span id="currentOperationName">Пайка компонентов</span></h3>
+                    <div class="operation-status">
+                        <span class="status-badge status-in-progress">В работе</span>
+                    </div>
+                </div>
+                <div class="operation-details">
+                    <div class="detail-item">
+                        <span class="label">Заказ:</span>
+                        <span class="value" id="currentOrder">PO-2024-00123</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Партия:</span>
+                        <span class="value" id="currentBatch">BATCH-001</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Прогресс:</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                        <span class="progress-text">65%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parameters Grid -->
+            <div class="parameters-grid" id="parametersGrid">
+                <!-- Parameters will be populated by JavaScript -->
+            </div>
+
+            <!-- Operation History -->
+            <div class="section">
+                <div class="section-header">
+                    <h2>История операций</h2>
+                    <button class="btn btn-secondary" onclick="exportHistory()">
+                        <span class="material-icons">download</span>
+                        Экспорт в CSV
+                    </button>
+                </div>
+                <div class="table-container">
+                    <table class="data-table" id="operationsHistoryTable">
+                        <thead>
+                            <tr>
+                                <th>Время</th>
+                                <th>Операция</th>
+                                <th>Параметры</th>
+                                <th>Пользователь</th>
+                                <th>Статус</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Parameter Input Modal -->
+    <div id="parameterModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="parameterModalTitle">Ввод параметра</h2>
+                <button class="close-modal" onclick="closeParameterModal()">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            <form id="parameterForm" class="modal-form">
+                <div class="parameter-range">
+                    <div class="range-labels">
+                        <span id="minValue">0</span>
+                        <span id="maxValue">100</span>
+                    </div>
+                    <div class="range-visualization" id="rangeVisualization">
+                        <!-- Range visualization will be populated by JavaScript -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="parameterValue">Значение</label>
+                    <input type="number" id="parameterValue" step="0.1" required>
+                    <span class="unit" id="parameterUnit">°C</span>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeParameterModal()">Отмена</button>
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/notifications.js"></script>
+</body>
+</html>
