@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milar EMS - Панель управления</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1>Milar EMS</h1>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link active">
+                    <span class="material-icons">dashboard</span>
+                    Главная
+                </a>
+                <a href="orders.html" class="nav-link">
+                    <span class="material-icons">inventory_2</span>
+                    Заказы
+                </a>
+                <a href="operations.html" class="nav-link">
+                    <span class="material-icons">precision_manufacturing</span>
+                    Операции
+                </a>
+                <a href="quality.html" class="nav-link">
+                    <span class="material-icons">verified</span>
+                    Качество
+                </a>
+            </nav>
+            <div class="user-menu">
+                <div class="user-avatar">
+                    <span class="material-icons">person</span>
+                </div>
+                <div class="user-info">
+                    <span class="user-name" id="currentUser">Технолог</span>
+                    <span class="user-role" id="currentRole">Технолог/Инженер</span>
+                </div>
+                <div class="dropdown-menu">
+                    <button class="dropdown-item" onclick="switchRole('technologist')">
+                        <span class="material-icons">engineering</span>
+                        Технолог
+                    </button>
+                    <button class="dropdown-item" onclick="switchRole('manager')">
+                        <span class="material-icons">supervisor_account</span>
+                        Менеджер
+                    </button>
+                    <button class="dropdown-item" onclick="switchRole('quality')">
+                        <span class="material-icons">assignment_turned_in</span>
+                        ОТК
+                    </button>
+                    <div class="dropdown-divider"></div>
+                    <button class="dropdown-item logout" onclick="logout()">
+                        <span class="material-icons">logout</span>
+                        Выйти
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="page-header">
+                <h1>Панель управления производством</h1>
+                <div class="last-update">
+                    <span class="material-icons">update</span>
+                    Обновлено: <span id="lastUpdateTime">--:--:--</span>
+                </div>
+            </div>
+
+            <!-- KPI Cards -->
+            <div class="kpi-grid">
+                <div class="kpi-card oee">
+                    <div class="kpi-header">
+                        <h3>OEE</h3>
+                        <span class="material-icons">trending_up</span>
+                    </div>
+                    <div class="kpi-value">87.2%</div>
+                    <div class="kpi-trend positive">
+                        <span class="material-icons">arrow_upward</span>
+                        +2.1%
+                    </div>
+                    <div class="kpi-chart">
+                        <canvas id="oeeChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="kpi-card defects">
+                    <div class="kpi-header">
+                        <h3>Уровень брака</h3>
+                        <span class="material-icons">warning</span>
+                    </div>
+                    <div class="kpi-value">1.8%</div>
+                    <div class="kpi-trend negative">
+                        <span class="material-icons">arrow_downward</span>
+                        -0.3%
+                    </div>
+                    <div class="kpi-chart">
+                        <canvas id="defectsChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="kpi-card downtime">
+                    <div class="kpi-header">
+                        <h3>Простои</h3>
+                        <span class="material-icons">schedule</span>
+                    </div>
+                    <div class="kpi-value">4.2%</div>
+                    <div class="kpi-trend positive">
+                        <span class="material-icons">arrow_upward</span>
+                        -1.1%
+                    </div>
+                    <div class="kpi-chart">
+                        <canvas id="downtimeChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Производительность по линиям</h3>
+                        <select class="chart-filter">
+                            <option>За сегодня</option>
+                            <option>За неделю</option>
+                            <option>За месяц</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="lineChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Распределение заказов по статусам</h3>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="pieChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active Orders -->
+            <div class="section">
+                <div class="section-header">
+                    <h2>Активные заказы</h2>
+                    <a href="orders.html" class="view-all">
+                        Все заказы
+                        <span class="material-icons">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="orders-table-container">
+                    <table class="orders-table" id="activeOrdersTable">
+                        <thead>
+                            <tr>
+                                <th>№ Заказа</th>
+                                <th>Продукт</th>
+                                <th>Статус</th>
+                                <th>Текущая операция</th>
+                                <th>Приоритет</th>
+                                <th>Прогресс</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Notifications Container -->
+    <div id="notificationsContainer" class="notifications-container"></div>
+
+    <script src="js/auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/notifications.js"></script>
+</body>
+</html>
