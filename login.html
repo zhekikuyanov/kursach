@@ -18,30 +18,36 @@
                 </div>
             </div>
 
-            <form class="login-form" id="loginForm">
+            <form class="login-form" id="loginForm" novalidate>
                 <div class="form-group">
                     <label for="username">Логин</label>
                     <div class="input-with-icon">
                         <span class="material-icons">person</span>
-                        <input type="text" id="username" name="username" required placeholder="Введите ваш логин">
+                        <input type="text" id="username" name="username" required 
+                               placeholder="Введите ваш логин" minlength="3">
                     </div>
+                    <div class="error-message" id="usernameError"></div>
                 </div>
 
                 <div class="form-group">
                     <label for="password">Пароль</label>
                     <div class="input-with-icon">
                         <span class="material-icons">lock</span>
-                        <input type="password" id="password" name="password" required placeholder="Введите ваш пароль">
+                        <input type="password" id="password" name="password" required 
+                               placeholder="Введите ваш пароль" minlength="4">
                     </div>
+                    <div class="error-message" id="passwordError"></div>
                 </div>
 
                 <div class="form-group">
                     <label for="role">Роль</label>
-                    <select id="role" name="role" class="role-select">
+                    <select id="role" name="role" class="role-select" required>
+                        <option value="">Выберите роль</option>
                         <option value="technologist">Технолог/Инженер</option>
                         <option value="manager">Менеджер производства</option>
                         <option value="quality">Специалист ОТК</option>
                     </select>
+                    <div class="error-message" id="roleError"></div>
                 </div>
 
                 <button type="submit" class="login-button">
@@ -51,11 +57,19 @@
             </form>
 
             <div class="login-footer">
-                <p>Для демонстрации используйте любые данные для входа</p>
+                <p>Демо доступы:<br>
+                   Технолог: technologist / tech123<br>
+                   Менеджер: manager / manager123<br>
+                   ОТК: quality / quality123
+                </p>
             </div>
         </div>
     </div>
 
-    <script src="/js/auth.js"></script>
+    <!-- Notifications Container -->
+    <div id="notificationsContainer" class="notifications-container"></div>
+
+    <script src="js/notifications.js"></script>
+    <script src="js/auth.js"></script>
 </body>
 </html>
