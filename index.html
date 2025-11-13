@@ -6,7 +6,7 @@
     <title>Milar EMS - Панель управления</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="header">
@@ -157,7 +157,7 @@
                     </a>
                 </div>
                 <div class="orders-table-container">
-                    <table class="orders-table" id="activeOrdersTable">
+                    <table class="orders-table">
                         <thead>
                             <tr>
                                 <th>№ Заказа</th>
@@ -169,7 +169,191 @@
                             </tr>
                         </thead>
                         <tbody>
-                           
+                            <tr>
+                                <td>
+                                    <div class="order-number">
+                                        <span class="material-icons">tag</span>
+                                        РО-2024-00123
+                                    </div>
+                                </td>
+                                <td class="product-info">Контроллер PLC-100</td>
+                                <td>
+                                    <span class="status-badge status-in-progress">
+                                        <span class="material-icons">autorenew</span>
+                                        в работе
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="current-operation">
+                                        <div class="operation-icon">
+                                            <span class="material-icons">build</span>
+                                        </div>
+                                        Пайка компонентов
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="priority-indicator priority-high">
+                                        <div class="priority-dot"></div>
+                                        Высокий
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="progress-container progress-high">
+                                        <div class="progress-wrapper">
+                                            <div class="progress-fill" style="width: 65%"></div>
+                                        </div>
+                                        <span class="progress-text">65%</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="order-number">
+                                        <span class="material-icons">tag</span>
+                                        РО-2024-00124
+                                    </div>
+                                </td>
+                                <td class="product-info">Датчик температуры</td>
+                                <td>
+                                    <span class="status-badge status-planned">
+                                        <span class="material-icons">schedule</span>
+                                        планируется
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="current-operation">
+                                        <div class="operation-icon">
+                                            <span class="material-icons">assignment</span>
+                                        </div>
+                                        Планирование
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="priority-indicator priority-medium">
+                                        <div class="priority-dot"></div>
+                                        Средний
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="progress-container progress-medium">
+                                        <div class="progress-wrapper">
+                                            <div class="progress-fill" style="width: 0%"></div>
+                                        </div>
+                                        <span class="progress-text">0%</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="order-number">
+                                        <span class="material-icons">tag</span>
+                                        РО-2024-00125
+                                    </div>
+                                </td>
+                                <td class="product-info">Модуль связи</td>
+                                <td>
+                                    <span class="status-badge status-in-progress">
+                                        <span class="material-icons">autorenew</span>
+                                        в работе
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="current-operation">
+                                        <div class="operation-icon">
+                                            <span class="material-icons">verified</span>
+                                        </div>
+                                        Тестирование
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="priority-indicator priority-high">
+                                        <div class="priority-dot"></div>
+                                        Высокий
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="progress-container progress-high">
+                                        <div class="progress-wrapper">
+                                            <div class="progress-fill" style="width: 30%"></div>
+                                        </div>
+                                        <span class="progress-text">30%</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="order-number">
+                                        <span class="material-icons">tag</span>
+                                        РО-2024-00126
+                                    </div>
+                                </td>
+                                <td class="product-info">Блок питания</td>
+                                <td>
+                                    <span class="status-badge status-paused">
+                                        <span class="material-icons">pause</span>
+                                        на паузе
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="current-operation">
+                                        <div class="operation-icon">
+                                            <span class="material-icons">handyman</span>
+                                        </div>
+                                        Монтаж
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="priority-indicator priority-low">
+                                        <div class="priority-dot"></div>
+                                        Низкий
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="progress-container progress-low">
+                                        <div class="progress-wrapper">
+                                            <div class="progress-fill" style="width: 45%"></div>
+                                        </div>
+                                        <span class="progress-text">45%</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="order-number">
+                                        <span class="material-icons">tag</span>
+                                        РО-2024-00127
+                                    </div>
+                                </td>
+                                <td class="product-info">Интерфейсная плата</td>
+                                <td>
+                                    <span class="status-badge status-completed">
+                                        <span class="material-icons">check_circle</span>
+                                        завершен
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="current-operation">
+                                        <div class="operation-icon">
+                                            <span class="material-icons">done_all</span>
+                                        </div>
+                                        Завершено
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="priority-indicator priority-medium">
+                                        <div class="priority-dot"></div>
+                                        Средний
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="progress-container progress-medium">
+                                        <div class="progress-wrapper">
+                                            <div class="progress-fill" style="width: 100%"></div>
+                                        </div>
+                                        <span class="progress-text">100%</span>
+                                    </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -180,10 +364,111 @@
     <!-- Notifications Container -->
     <div id="notificationsContainer" class="notifications-container"></div>
 
-    <script src="js/auth.js"></script>
+    <script src="auth.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="js/charts.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/notifications.js"></script>
+    <script src="charts.js"></script>
+    <script src="main.js"></script>
+    <script src="notifications.js"></script>
+
+    <script>
+        // Add interactive functionality to the table
+        document.addEventListener('DOMContentLoaded', function() {
+            const tableRows = document.querySelectorAll('.orders-table tbody tr');
+            
+            tableRows.forEach(row => {
+                row.addEventListener('click', function() {
+                    // Remove active class from all rows
+                    tableRows.forEach(r => r.classList.remove('active'));
+                    // Add active class to clicked row
+                    this.classList.add('active');
+                    
+                    // Get order number from the first cell
+                    const orderNumber = this.querySelector('.order-number').textContent.trim();
+                    console.log('Selected order:', orderNumber);
+                    
+                    // Here you can add navigation to order details
+                    // window.location.href = `order-details.html?order=${orderNumber}`;
+                });
+            });
+            
+            // Add hover effects
+            tableRows.forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                    this.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+                });
+                
+                row.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.transform = 'translateY(0)';
+                        this.style.boxShadow = 'none';
+                    }
+                });
+            });
+
+            // Update time
+            function updateTime() {
+                const now = new Date();
+                const timeString = now.toLocaleTimeString('ru-RU');
+                document.getElementById('lastUpdateTime').textContent = timeString;
+            }
+            
+            updateTime();
+            setInterval(updateTime, 1000);
+        });
+
+        // Role switching functionality
+        function switchRole(role) {
+            const userName = document.getElementById('currentUser');
+            const userRole = document.getElementById('currentRole');
+            
+            switch(role) {
+                case 'technologist':
+                    userName.textContent = 'Технолог';
+                    userRole.textContent = 'Технолог/Инженер';
+                    break;
+                case 'manager':
+                    userName.textContent = 'Менеджер';
+                    userRole.textContent = 'Менеджер производства';
+                    break;
+                case 'quality':
+                    userName.textContent = 'Контролер';
+                    userRole.textContent = 'ОТК';
+                    break;
+            }
+            
+            // Show notification
+            showNotification('Роль изменена', `Вы вошли как ${userRole.textContent}`, 'info');
+        }
+
+        function logout() {
+            // Redirect to login page
+            window.location.href = 'login.html';
+        }
+
+        function showNotification(title, message, type = 'info') {
+            const container = document.getElementById('notificationsContainer');
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <div class="notification-title">${title}</div>
+                    <div class="notification-message">${message}</div>
+                </div>
+                <button class="notification-close" onclick="this.parentElement.remove()">
+                    <span class="material-icons">close</span>
+                </button>
+            `;
+            
+            container.appendChild(notification);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
+    </script>
 </body>
 </html>
